@@ -1,4 +1,6 @@
 <?php
+    $allow_nsfw = True;
+
     $gallery_filelist_full = scandir("images");
     shuffle($gallery_filelist_full);
 ?>
@@ -31,7 +33,7 @@
         <div class="gallery">
             <?php
                 foreach ($gallery_filelist_full as &$element) {
-                    if (str_contains($element, "astolfo")) {
+                    if (str_contains($element, "astolfo") && (!str_contains($element, "nsfw") || $allow_nsfw)) {
                         echo "<a href=\"images/".$element."\" data-lightbox=\"gallery\"><img src=\"images/".$element."\"></a>";
                     }
                 }

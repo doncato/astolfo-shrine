@@ -1,6 +1,12 @@
 body {
+    color:rgb(240, 56, 185);
     background-color: rgb(0, 0, 0);
 } 
+
+a, a:active, a:visited {
+    color:rgb(240, 56, 185);
+    text-decoration: none;
+}
 
 .gallery{
     margin: 10px 50px;
@@ -44,8 +50,12 @@ body {
     overflow: hidden;
     cursor: pointer;
 }
+
+.bottom {
+    align-items: center;
+    font-size: 14px;
+}
+
 #info {
     font-family: 'Roboto Mono', monospace;
-    font-size: 1.6rem;
-    color: rgb(240, 56, 185);
 }

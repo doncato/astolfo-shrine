@@ -1,5 +1,9 @@
 <?php
-    $allow_nsfw = True;
+    $allow_nsfw = str_contains(strtoupper($_SERVER["QUERY_STRING"]), "NSFW");
+
+    $host_ip = $_SERVER["SERVER_NAME"];
+
+    $music_filelist_full = scandir("audio");
 
     $gallery_filelist_full = scandir("images");
     shuffle($gallery_filelist_full);
@@ -22,12 +26,18 @@
     <body>
         <div class="container">
         <div class="typing-effect">
-            <h1>Astolfo</h1>
+            <h1><a href="http://<?php echo $host_ip;?>">Astolfo</a></h1>
         </div>
         <div class="audio">
-            <audio controls autoplay>
-                <source src="/audio/astolfo-bgm.mp3" type="audio/mpeg">
-            </audio>
+            <?php
+                foreach ($music_filelist_full as $element) {
+                    if (str_contains($element, "astolfo")) {
+                        echo "<audio controls autoplay>
+                            <source src=\"/audio/".$element."\" type=\"audio/mpeg\">
+                        </audio>";
+                    }
+                }
+            ?>
         </div>
         </div>
         <div class="gallery">

@@ -1,7 +1,20 @@
 body {
     color:rgb(240, 56, 185);
     background-color: rgb(0, 0, 0);
-} 
+}
+
+h1 {
+    color: rgb(240, 56, 185);
+    text-shadow:
+        0 0 7px rgb(240, 56, 185),
+        0 0 10px rgb(240, 56, 185),
+        0 0 21px rgb(240, 56, 185),
+        0 0 42px rgb(240, 56, 185),
+        0 0 82px rgb(240, 56, 185),
+        0 0 92px rgb(240, 56, 185),
+        0 0 102px rgb(240, 56, 185),
+        0 0 151px rgb(240, 56, 185),
+}
 
 a, a:active, a:visited {
     color:rgb(240, 56, 185);
